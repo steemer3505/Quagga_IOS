@@ -41,9 +41,9 @@ echo "ipv6 access-list ${grpname_ebgp_full}-in deny ::/0 exact-match"
 echo "ipv6 access-list ${grpname_ebgp_full}-in permit any"
 echo "no ipv6 access-list ${grpname_ebgp_full}-out"
 echo "ipv6 access-list ${grpname_ebgp_full}-out deny ::/0 exact-match"
-#for target in ${prefixes}; do
-#	echo "ipv6 access-list ${grpname_ebgp_full}-out permit ${target} exact-match"
-#done
+for target in ${prefixes}; do
+	echo "ipv6 access-list ${grpname_ebgp_full}-out permit ${target} exact-match"
+done
 echo "ipv6 access-list ${grpname_ebgp_full}-out deny any"
 echo "no ipv6 access-list ${grpname_ebgp_part}-in"
 echo "ipv6 access-list ${grpname_ebgp_part}-in deny ::/0 exact-match"
